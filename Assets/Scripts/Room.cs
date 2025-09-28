@@ -29,12 +29,11 @@ public class Room
 		int minY = minDistanceFromEdge;
 		int maxY = length - minDistanceFromEdge;
 
-		for(int i = minY; i < maxY;i++)
+		for (int i = minY; i < maxY; i++)
 		{
 			hallwayCandidate.Add(new Hallway(new Vector2Int(0, i)));
 			hallwayCandidate.Add(new Hallway(new Vector2Int(right, i)));
 		}
-
 		return hallwayCandidate;
 	}
 }

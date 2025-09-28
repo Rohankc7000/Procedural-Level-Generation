@@ -51,7 +51,7 @@ public class LayoutGeneratorRooms : MonoBehaviour
 		int roomLength = random.Next(roomLengthMin, roomLengthMax);
 		int availableLengthY = length / 2 - roomLength;
 		int randomY = random.Next(0, availableLengthY);
-		int roomY = randomY + (width / 4);
+		int roomY = randomY + (length / 4);
 
 		return new RectInt(roomX, roomY, roomWidth, roomLength);
 	}
@@ -68,7 +68,11 @@ public class LayoutGeneratorRooms : MonoBehaviour
 		layoutTexture.FillWithColor(Color.black);
 		layoutTexture.DrawRectangle(roomCanditateRect, Color.cyan);
 
-		openDoorways.ForEach((h) => layoutTexture.SetPixel(h.StartPositionAbsolute.x, h.StartPositionAbsolute.y, Color.red));
+		openDoorways.ForEach((h) =>
+		{
+			layoutTexture.SetPixel(h.StartPositionAbsolute.x, h.StartPositionAbsolute.y, Color.red);
+			Debug.Log($"{h.StartPositionAbsolute}");
+		});
 
 		layoutTexture.SaveAsset();
 	}

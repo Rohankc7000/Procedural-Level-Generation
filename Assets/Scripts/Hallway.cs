@@ -15,9 +15,6 @@ public class Hallway
 	{
 		get
 		{
-			Debug.Log("Start Position: " + startPosition);
-			Debug.Log("Start Room Position: " + startRoom.Area.position);
-			Debug.Log("StartPositionAbsolute: " + (startPosition + startRoom.Area.position));
 			return startPosition + startRoom.Area.position;
 		}
 	}
@@ -25,9 +22,6 @@ public class Hallway
 	{
 		get
 		{
-			Debug.Log("End Position: " + endPosition);
-			Debug.Log("End Room Position: " + endRoom.Area.position);
-			Debug.Log("EndPositionAbsolute: " + (endPosition + endRoom.Area.position));
 			return endPosition + endRoom.Area.position;
 		}
 	}
